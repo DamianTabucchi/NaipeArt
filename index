@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>NaipeArt — Dibujo tradicional y digital</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Tutoriales de dibujo: fundamentos, perspectiva y figura humana. Recursos imprimibles y rutas de aprendizaje.">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header>
+    <div class="container nav">
+      <a class="nav__brand" href="index.html">NaipeArt</a>
+      <ul class="nav__list" role="list">
+        <li><a class="nav__link" href="tutoriales.html">Tutoriales</a></li>
+        <li><a class="nav__link" href="fundamentos.html">Fundamentos</a></li>
+        <li><a class="nav__link" href="perspectiva.html">Perspectiva</a></li>
+        <li><a class="nav__link" href="figura.html">Figura</a></li>
+        <li><a class="nav__link" href="recursos.html">Recursos</a></li>
+        <li><a class="nav__link" href="sobre.html">Sobre mí</a></li>
+        <li><a class="nav__link" href="contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="container hero">
+      <h1 class="hero__title">Aprende dibujo paso a paso</h1>
+      <p class="hero__text">Fundamentos, perspectiva y figura humana con ejercicios imprimibles y flujos digitales.</p>
+      <a class="btn" href="tutoriales.html">Ver tutoriales</a>
+    </section>
+
+    <section class="container section">
+      <h2>Últimos tutoriales</h2>
+      <div class="grid">
+        <article class="card">
+          <img src="assets/img/placeholder.jpg" alt="Trazos básicos y control de línea">
+          <div class="card__body">
+            <h3 class="card__title"><a href="tutorial-plantilla.html">Control de línea</a></h3>
+            <p class="card__meta">Nivel: Inicial • 12 min</p>
+          </div>
+        </article>
+        <article class="card">
+          <img src="assets/img/placeholder.jpg" alt="Cubos en perspectiva de dos puntos">
+          <div class="card__body">
+            <h3 class="card__title"><a href="tutorial-plantilla.html">Perspectiva a 2 puntos</a></h3>
+            <p class="card__meta">Nivel: Básico • 18 min</p>
+          </div>
+        </article>
+        <article class="card">
+          <img src="assets/img/placeholder.jpg" alt="Proporciones de la cabeza">
+          <div class="card__body">
+            <h3 class="card__title"><a href="tutorial-plantilla.html">Cabeza: proporciones</a></h3>
+            <p class="card__meta">Nivel: Intermedio • 24 min</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="container section">
+      <h2>Rutas de aprendizaje</h2>
+      <div class="grid">
+        <article class="card">
+          <div class="card__body">
+            <h3 class="card__title"><a href="fundamentos.html">Fundamentos</a></h3>
+            <p class="c-muted">Línea, forma, valor, textura, composición.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card__body">
+            <h3 class="card__title"><a href="perspectiva.html">Perspectiva</a></h3>
+            <p class="c-muted">1, 2 y 3 puntos, elipses y escala.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card__body">
+            <h3 class="card__title"><a href="figura.html">Figura humana</a></h3>
+            <p class="c-muted">Gestual, proporciones y anatomía simple.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="y"></span> NaipeArt • <a href="https://instagram.com/" rel="me">Instagram</a> • <a href="https://youtube.com/">YouTube</a></p>
+    </div>
+    <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+  </footer>
+</body>
+</html>
