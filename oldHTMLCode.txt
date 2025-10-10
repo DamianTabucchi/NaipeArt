@@ -1,0 +1,39 @@
+Style dentro de head:
+  <style>
+      body { background-color: #f0f8ff; font-family: Arial, Helvetica, sans-serif; line-height: 1; margin: 16px; }
+      h1 { text-align: center; margin-bottom: 6pt; }
+      h2 { text-align: left; margin-bottom: 6pt; }
+      h3 { text-align: left; margin-bottom: 6pt; }
+      h3.center { text-align: center; margin-bottom: 6pt; }
+    /* párrafos alineados a la izquierda (sin centrado del bloque) */
+      p.margen  { max-width: 70ch; margin: 6pt 0 1pt; }
+      p.center { text-align: center; margin-left: auto; margin-right: auto; }
+      /* Tabla de navegación */
+      div.center { text-align: center;}
+      a.center { text-align: center;}
+
+  table.links {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 6px 0;
+    table-layout: fixed; /* columnas iguales */
+  }
+  table.links td {
+    border: 1px solid #cccccc;
+    padding: 6px;
+    text-align: center;
+  }
+  table.links a {
+    display: block;
+    text-decoration: none;
+    color: #0645ad;
+    font-weight: 600;
+    padding: 6px 0;
+  }
+  table.links a:hover { text-decoration: underline; }
+  @media (max-width: 640px){
+    table.links { font-size: 11pt; }
+    table.links td { padding: 8px 6px; }
+  }
+  
+  </style>

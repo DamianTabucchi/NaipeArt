@@ -1,0 +1,99 @@
+/* ====== Base ====== */
+* { box-sizing: border-box; }
+
+body {
+  background-color: #f0f8ff;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1;
+  margin: 16px;
+  color: #111;
+}
+
+/* Titulares */
+h1, h2, h3 { margin-bottom: 6pt; }
+h1 { text-align: center; }
+h2, h3 { text-align: left; }
+h2.center { text-align: center; }
+h3.center { text-align: center; }
+
+/* Párrafos */
+p.margen {
+  max-width: 70ch;
+  margin: 6pt 0 1pt;
+}
+p.center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+p.justify { text-align: justify; }
+
+/* Utilidades de centrado */
+div.center { text-align: center; }
+a.center { text-align: center; }
+
+/* ====== Navegación (tabla de links) ====== */
+table.links {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 6px 0;
+  table-layout: fixed; /* columnas iguales */
+}
+table.links td {
+  border: 1px solid #cccccc;
+  padding: 6px;
+  text-align: center;
+}
+table.links a {
+  display: block;
+  text-decoration: none;
+  color: #0645ad;
+  font-weight: 600;
+  padding: 6px 0;
+}
+table.links a:hover { text-decoration: underline; }
+
+/* Responsive nav */
+@media (max-width: 640px){
+  table.links { font-size: 11pt; }
+  table.links td { padding: 8px 6px; }
+}
+
+/* ====== Contacto: tabla formulario + mapa ====== */
+table.contact-map{
+  border-collapse: collapse;
+  margin: 20px auto;   /* centra la tabla */
+  width: auto;         /* ocupa el ancho de sus celdas */
+  max-width: 100%;     /* evita desborde en pantallas chicas */
+}
+table.contact-map .form-cell{
+  vertical-align: top;
+  padding: 15px;
+  width: 40%;
+}
+table.contact-map .map-cell{
+  vertical-align: top;
+  padding: 15px;
+  width: 60%;
+}
+table.contact-map input,
+table.contact-map textarea{
+  width: 95%;
+  padding: 8px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+table.contact-map button{
+  padding: 8px 14px;
+  border: 1px solid #999;
+  background: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+table.contact-map button:hover{
+  background: #f0f0f0;
+}
+
+/* ====== Embeds (YouTube) ====== */
+iframe { max-width: 100%; border: 0; }
