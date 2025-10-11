@@ -95,5 +95,19 @@ table.contact-map button:hover{
   background: #f0f0f0;
 }
 
+table.fundamentos-center{
+  border-collapse: collapse;
+  margin: 20px auto;
+  width: auto;
+  max-width: 100%;
+}
+
+table.fundamentos-center .fundamentos-cell{
+  vertical-align: top;
+  padding: 15px;
+  width: 75%;
+  text-align: center;
+}
+
 /* ====== Embeds (YouTube) ====== */
 iframe { max-width: 100%; border: 0; }
