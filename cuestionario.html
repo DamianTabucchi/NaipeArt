@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>NaipeArt — Cuestionario</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Cuestionario didáctico de dibujo: fundamentos, tutoriales y recursos.">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/cuestionario.js" defer></script>
+</head>
+<body>
+  <main>
+    <section>
+      <h1>Cuestionario</h1>
+    </section>
+
+    <table class="links">
+      <tr>
+        <td><a href="index.html">Home</a></td>
+        <td><a href="tutoriales.html">Tutoriales</a></td>
+        <td><a href="fundamentos.html">Fundamentos</a></td>
+        <td><a href="recursos.html">Recursos</a></td>
+        <td><a href="index.html">Sobre mí</a></td>
+        <td><a href="contacto.html">Contacto</a></td>
+      </tr>
+    </table>
+
+    <section>
+      <h2 class="center">Test de 5 preguntas (opción múltiple)</h2>
+      <p class="center">Marca una opción por pregunta y presiona “Corregir”.</p>
+      <form id="quiz">
+        <!-- El JS inyectará aquí las preguntas -->
+      </form>
+      <p id="resultado" class="center"></p>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <p class="center">© <span id="y"></span> NaipeArt • <a href="https://instagram.com/naipeart" rel="me">Instagram</a> • <a href="https://youtube.com/@naipeart">YouTube</a></p>
+    </div>
+    <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+  </footer>
+</body>
+</html>
