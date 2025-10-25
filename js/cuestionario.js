@@ -21,29 +21,29 @@ const preguntas = [
     correcta: 1
   },
   {
-    enunciado: "Tutoriales — ¿Cuál video trata sobre perspectiva de dos puntos?",
+    enunciado: "¿Para que sirve la perspectiva de dos puntos?",
     opciones: [
-      "6 hábitos para mejorar la calidad de tus líneas.",
-      "Perspectiva de dos puntos (Dibujo simplificado).",
-      "Dibuja cabezas rápidamente con el método de Loomis.",
-      "Sombras y valores tonales avanzados."
+      "Se usa para medir proporciones del cuerpo humano en el dibujo.",
+      "Sirve para representar objetos con una vista totalmente frontal sin profundidad.",
+      "Sirve para representar objetos tridimensionales en un plano, mostrando profundidad y volumen mediante dos puntos de fuga.",
+      "Se utiliza para mezclar colores y crear degradados en una pintura."
     ],
-    correcta: 1
+    correcta: 2
   },
   {
-    enunciado: "Recursos — ¿Cuál de los siguientes autores está asociado al 'método Loomis'?",
-    opciones: ["Andrew Loomis", "Betty Edwards", "Bert Dodson", "Joseph Albers"],
+    enunciado: "¿A que hace referencia el 'método Loomis'?",
+    opciones: ["Es un método para construir la cabeza y el cuerpo humano.", "Es una técnica de pintura al óleo basada en capas de color.", "Es un método de perspectiva utilizado para dibujar edificios.", "Es un sistema de mezcla de colores desarrollado para la ilustración digital."],
     correcta: 0
   },
   {
     enunciado: "Fundamentos — Según la práctica sugerida, ¿qué hábito es útil para calentar?",
     opciones: [
+      "Dibujar en pantalla sin referencias.",
       "Planchas de líneas rectas y curvas unos minutos diarios.",
       "Usar solo lápices 8B.",
-      "Evitar las líneas diagonales.",
-      "Dibujar en pantalla sin referencias."
+      "Evitar las líneas diagonales."
     ],
-    correcta: 0
+    correcta: 1
   }
 ];
 
