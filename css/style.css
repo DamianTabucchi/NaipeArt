@@ -1,12 +1,69 @@
 /* ====== Base ====== */
+:root{
+  --paper: #e9dfd1;         /* tono papel */
+  --ink: #2a2019;           /* tinta/marrón oscuro */
+  --sepia: #7a5a3a;         /* acentos (ébano/sepia) */
+  --sepia-clarito:#c8b39a;
+}
+
 * { box-sizing: border-box; }
 
-body {
-  background-color: #f0f8ff;
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1;
-  margin: 16px;
-  color: #111;
+
+
+.banner{
+  position: relative;
+  width: 100%;
+  height: 80%;
+  padding-top: 30%; /* relación aprox. 16:5 */
+  background-image: url('../resources/banner1920x600.png'); /* <-- tu archivo */
+  background-size: cover;
+  background-position: center;
+  margin: 16px 0 24px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,.08);
+}
+
+.banner-text{
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: #f7f3ed;
+  text-shadow: 2px 2px 4px rgba(0,0,0,.5);
+  font-size: clamp(18px, 2.2vw, 24px);
+}
+
+/* Si no quieres texto superpuesto en alguna página: */
+.banner.no-overlay .banner-text{ display:none; }
+
+main > section{
+  background-color: rgba(255,255,255,.92);
+  border: 1px solid rgba(42,32,25,.08);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,.04);
+}
+
+body{
+  margin: 0;                      /* quitamos márgenes globales */
+  color: var(--ink);
+  line-height: 1.5;
+  font-family: Georgia, "Times New Roman", serif;
+
+  /* Fondo papel con textura */
+  background-color: var(--paper);
+  background-image: url('../resources/papertexture.PNG');
+  background-repeat: repeat;
+  background-attachment: fixed;   /* sensación “lienzo” */
+  background-size: 2000px auto;
+}
+
+main{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px;
 }
 
 /* Titulares */
@@ -21,43 +78,53 @@ p.margen {
   max-width: 70ch;
   margin: 6pt 0 1pt;
 }
-p.center {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-p.justify { text-align: justify; }
+
+p.center{ text-align:center; margin: 0 auto; }
+p.justify{ text-align: justify; }
+iframe{ max-width:100%; border:0; }
+figure{ margin: 0; }
+figcaption{ font-size: .9em; color: #6b5747; text-align:center; }
 
 /* Utilidades de centrado */
 div.center { text-align: center; }
 a.center { text-align: center; }
 
-/* ====== Navegación (tabla de links) ====== */
-table.links {
+/* ====== Navegación ====== */
+table.links{
   width: 100%;
-  border-collapse: collapse;
-  margin: 6px 0;
-  table-layout: fixed; /* columnas iguales */
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 10px 0 18px;
+  background: rgba(255,255,255,.85);
+  border: 1px solid rgba(42,32,25,.12);
+  border-radius: 10px;
+  overflow: hidden;
 }
-table.links td {
-  border: 1px solid #cccccc;
-  padding: 6px;
+table.links td{
+  padding: 10px 6px;
   text-align: center;
+  border-right: 1px solid rgba(42,32,25,.08);
 }
-table.links a {
-  display: block;
-  text-decoration: none;
-  color: #0645ad;
-  font-weight: 600;
-  padding: 6px 0;
-}
-table.links a:hover { text-decoration: underline; }
+table.links td:last-child{ border-right: 0; }
 
-/* Responsive nav */
-@media (max-width: 640px){
-  table.links { font-size: 11pt; }
-  table.links td { padding: 8px 6px; }
+table.links a{
+  display: block;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 0;
 }
+table.links a:hover{
+  background: var(--sepia-clarito);
+  color: #1e140d;
+}
+
+@media (max-width: 640px){
+  table.links{ font-size: 14px; }
+  table.links td{ padding: 8px 4px; }
+}
+
 
 /* ====== Contacto: tabla formulario + mapa ====== */
 table.contact-map{
@@ -109,5 +176,9 @@ table.fundamentos-center .fundamentos-cell{
   text-align: center;
 }
 
-/* ====== Embeds (YouTube) ====== */
-iframe { max-width: 100%; border: 0; }
+footer p{
+  color:#6b5747;
+  font-size: .95em;
+}
+footer a{ color: var(--sepia); }
+footer a:hover{ text-decoration: underline; }
