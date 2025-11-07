@@ -13,7 +13,7 @@
 .banner{
   position: relative;
   width: 100%;
-  height: 80%;
+  height: 0;
   padding-top: 30%; /* relación aprox. 16:5 */
   background-image: url('../resources/banner1920x600.png'); /* <-- tu archivo */
   background-size: cover;
@@ -120,12 +120,6 @@ table.links a:hover{
   color: #1e140d;
 }
 
-@media (max-width: 640px){
-  table.links{ font-size: 14px; }
-  table.links td{ padding: 8px 4px; }
-}
-
-
 /* ====== Contacto: tabla formulario + mapa ====== */
 table.contact-map{
   border-collapse: collapse;
@@ -162,23 +156,178 @@ table.contact-map button:hover{
   background: #f0f0f0;
 }
 
+/* Tabla de fundamentos */
 table.fundamentos-center{
   border-collapse: collapse;
   margin: 20px auto;
-  width: auto;
+  width: 100%;
   max-width: 100%;
+  table-layout: fixed;            /* Distribución predecible de columnas */
 }
 
+table.fundamentos-center td,
 table.fundamentos-center .fundamentos-cell{
-  vertical-align: top;
+  vertical-align: center;
   padding: 15px;
-  width: 75%;
-  text-align: center;
+  text-align: left;
 }
 
+/* Anchos por columna: texto 65% | imagen 35% */
+table.fundamentos-center td:nth-child(1){ width: 65%; }
+table.fundamentos-center td:nth-child(2){ width: 35%; }
+
+/* La imagen ocupa toda su columna, sin deformarse */
+table.fundamentos-center img{
+  width: 100%;
+  max-width: 480px;               /* ajusta este tope a gusto (420–600px) */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 640px){
+  table.links{ font-size: 14px; }
+  table.links td{ padding: 8px 4px; }
+  table.fundamentos-center{ table-layout: auto; }
+  table.fundamentos-center td:nth-child(1),
+  table.fundamentos-center td:nth-child(2){ width: auto; }
+  table.fundamentos-center img{ max-width: 90vw; }
+}
+
+/* ====== Tabla de materiales ====== */
+table.materiales{
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 16px 0 8px;
+}
+
+table.materiales tr{
+  background: rgba(255,255,255,.92);
+  border: 1px solid rgba(42,32,25,.10);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,.04);
+}
+
+table.materiales td{
+  vertical-align: middle;
+  padding: 16px;
+  width: 50%;
+}
+
+table.materiales .mat-texto p{
+  margin: 0 0 6px;
+  text-align: left;
+}
+
+table.materiales .mat-img img{
+  display: block;
+  width: 100%;
+  height: auto;           /* no recorta; mantiene proporción */
+  max-height: 520px;      /* tope visual por si alguna es muy alta */
+  object-fit: contain;    /* y dentro del tope, que se vea completa */
+  border-radius: 8px;
+}
+
+
+@media (max-width: 720px){
+  table.materiales td{ width: 100%; display: block; }
+  table.materiales tr + tr{ margin-top: 12px; display: block; }
+}
+
+/* ====== Footer ====== */
 footer p{
   color:#6b5747;
   font-size: .95em;
 }
 footer a{ color: var(--sepia); }
 footer a:hover{ text-decoration: underline; }
+
+/* ====== Sobre mí ====== */
+.about-wrap {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;  /* texto | foto */
+  gap: 32px;
+  align-items: center;                 /* centra verticalmente */
+  justify-content: space-between;      /* mantiene proporción elegante */
+}
+
+.about-text p {
+  margin: 0 0 12px;
+  text-align: justify;                 /* ← justifica el texto */
+  line-height: 1.7;
+}
+
+/* Imagen centrada verticalmente y a la derecha */
+.about-photo {
+  display: flex;
+  justify-content: center;             /* centra horizontalmente dentro de su columna */
+  align-items: center;                 /* centra verticalmente dentro de su columna */
+}
+
+.about-photo figure {
+  margin: 0;
+  text-align: center;
+}
+
+.about-photo img {
+  width: 100%;
+  max-width: 320px;                    /* tamaño equilibrado */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.about-photo figcaption {
+  font-size: 0.9em;
+  color: #6b5747;
+  margin-top: 8px;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Responsive: apila en pantallas pequeñas */
+@media (max-width: 860px) {
+  .about-wrap {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .about-text p {
+    text-align: justify;
+  }
+
+  .about-photo {
+    margin-top: 16px;
+  }
+}
+
+/* Galería de dibujos */
+.galeria{
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+.galeria figure{ 
+  margin: 0; 
+  background: rgba(255,255,255,.92);
+  border: 1px solid rgba(42,32,25,.10);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,.04);
+}
+.galeria img{
+  width: 100%;
+  height: 240px;        /* altura consistente en mosaico */
+  object-fit: cover;    /* recorte suave si la proporción no coincide */
+  display: block;
+}
+.galeria figcaption{
+  font-size: .9em;
+  color: #6b5747;
+  text-align: center;
+  padding: 8px 10px;
+}
+
