@@ -351,3 +351,15 @@ footer a:hover{ text-decoration: underline; }
   padding: 8px 10px;
 }
 
+/* ====== Página 404 ====== */
+.notfound-big {
+  font-size: clamp(36px, 8vw, 96px);
+  line-height: 1;
+  letter-spacing: 2px;
+  margin: 0 0 8px;
+  text-align: center;
+}
+.notfound-sub {
+  text-align: center;
+  opacity: .9;
+}
