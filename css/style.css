@@ -8,8 +8,6 @@
 
 * { box-sizing: border-box; }
 
-
-
 .banner{
   position: relative;
   width: 100%;
@@ -127,24 +125,35 @@ table.contact-map{
   width: auto;         /* ocupa el ancho de sus celdas */
   max-width: 100%;     /* evita desborde en pantallas chicas */
 }
+
 table.contact-map .form-cell{
   vertical-align: top;
   padding: 15px;
   width: 40%;
 }
+
 table.contact-map .map-cell{
   vertical-align: top;
   padding: 15px;
   width: 60%;
 }
-table.contact-map input,
+
 table.contact-map textarea{
-  width: 95%;
-  padding: 8px;
-  border: 1px solid #bbb;
-  border-radius: 4px;
-  box-sizing: border-box;
+  resize: vertical;      /* ← permite solo alto */
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 120px;
+  max-height: 50vh;
+  overflow: auto;
 }
+
+table.contact-map input{
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
 table.contact-map button{
   padding: 8px 14px;
   border: 1px solid #999;
@@ -156,13 +165,24 @@ table.contact-map button:hover{
   background: #f0f0f0;
 }
 
+/* En móviles: apilar formulario y mapa */
+@media (max-width: 800px){
+  table.contact-map { width: 100%; }
+  table.contact-map .form-cell,
+  table.contact-map .map-cell{
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+  }
+}
+
 /* Tabla de fundamentos */
 table.fundamentos-center{
   border-collapse: collapse;
   margin: 20px auto;
   width: 100%;
   max-width: 100%;
-  table-layout: fixed;            /* Distribución predecible de columnas */
+  table-layout: fixed;
 }
 
 table.fundamentos-center td,

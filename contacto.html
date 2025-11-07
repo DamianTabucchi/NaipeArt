@@ -9,9 +9,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header class="banner">
-    <div class="banner-text">
-    </div>
+  <header class="banner">
   </header>
   <main>
     <section>
@@ -36,49 +34,49 @@
         formulario:</p>
       <br>
     </section>
+    <section>
+      <!-- Tabla con 2 columnas: Formulario a la izquierda, Mapa a la derecha -->
+      <table class="contact-map">
+        <tr>
+          <!-- Primera celda: Formulario -->
+          <td class="form-cell">
+            <form action="mailto:damian.tabucchi@alumnos.uai.edu.ar"
+                  method="post" enctype="text/plain">
 
-    <!-- Tabla con 2 columnas: Formulario a la izquierda, Mapa a la derecha -->
-<table class="contact-map">
-  <tr>
-    <!-- Primera celda: Formulario -->
-    <td class="form-cell">
-      <form action="mailto:damian.tabucchi@alumnos.uai.edu.ar"
-            method="post" enctype="text/plain">
+              <fieldset>
+                <h3>Formulario de Contacto</h3>
 
-        <fieldset>
-          <h3>Formulario de Contacto</h3>
+                <!-- Nombre -->
+                <label for="nombre">Nombre:</label><br>
+                <input id="nombre" name="nombre" type="text" required><br><br>
 
-          <!-- Nombre -->
-          <label for="nombre">Nombre:</label><br>
-          <input id="nombre" name="nombre" type="text" required><br><br>
+                <!-- Email -->
+                <label for="email">Email:</label><br>
+                <input id="email" name="email" type="email" required><br><br>
 
-          <!-- Email -->
-          <label for="email">Email:</label><br>
-          <input id="email" name="email" type="email" required><br><br>
+                <!-- Comentario -->
+                <label for="comentario">Comentario:</label><br>
+                <textarea id="comentario" name="comentario" rows="5" required></textarea><br><br>
 
-          <!-- Comentario -->
-          <label for="comentario">Comentario:</label><br>
-          <textarea id="comentario" name="comentario" rows="5" required></textarea><br><br>
-
-          <!-- Botón -->
-          <button type="submit">Enviar</button>
-        </fieldset>
-      </form>
-    </td>
-    <!-- Segunda celda: Mapa -->
-    <td class="map-cell">
-      <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.5384090631646!2d-58.37422102441413!3d-34.61583197294996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a3354dd6271479%3A0x962789966f588ee6!2sEstatua%20de%20Mafalda!5e0!3m2!1ses!2sar!4v1762476248763!5m2!1ses!2sar" 
-        width="600" height="450" style="border:0;" 
-        allowfullscreen="" loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-      <br>
-      <label class="caption">Mapa de Google</label>
-    </td>
-  </tr>
-</table>
-
+                <!-- Botón -->
+                <button type="submit">Enviar</button>
+              </fieldset>
+            </form>
+          </td>
+          <!-- Segunda celda: Mapa -->
+          <td class="map-cell">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.5384090631646!2d-58.37422102441413!3d-34.61583197294996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a3354dd6271479%3A0x962789966f588ee6!2sEstatua%20de%20Mafalda!5e0!3m2!1ses!2sar!4v1762476248763!5m2!1ses!2sar" 
+              width="600" height="450" style="border:0;" 
+              allowfullscreen="" loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <br>
+            <label class="caption">Mapa de Google</label>
+          </td>
+        </tr>
+      </table>
+    </section>
 
   <footer>
     <div>
