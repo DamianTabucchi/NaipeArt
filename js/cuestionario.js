@@ -1,4 +1,15 @@
-// Preguntas basadas en tus páginas (Fundamentos, Tutoriales, Recursos)
+/*
+  ===============================================
+  CUESTIONARIO DINÁMICO INTERACTIVO
+  ===============================================
+  Archivo: cuestionario.js
+  Descripción: Genera un quiz interactivo sobre fundamentos
+                del dibujo con corrección automática
+  ===============================================
+*/
+
+// ===== Base de datos de preguntas =====
+// Array con preguntas de opción múltiple sobre contenido del sitio
 const preguntas = [
   {
     enunciado: "Fundamentos — ¿Qué describe mejor la 'línea' en dibujo?",
@@ -47,10 +58,12 @@ const preguntas = [
   }
 ];
 
-// Render simple
+// ===== Referencias a elementos del DOM =====
 const $quiz = document.getElementById("quiz");
 const $resultado = document.getElementById("resultado");
 
+// ===== Función: Renderizar el cuestionario =====
+// Genera dinámicamente el HTML de las preguntas y opciones
 function render() {
   const html = preguntas.map((p, i) => {
     const name = `q${i}`;
@@ -74,9 +87,12 @@ function render() {
     </p>
   `;
 
+  // Agregar evento al botón de corrección
   document.getElementById("corregir").addEventListener("click", corregir);
 }
 
+// ===== Función: Corregir respuestas =====
+// Compara las respuestas seleccionadas con las correctas
 function corregir() {
   let aciertos = 0;
 
@@ -85,7 +101,10 @@ function corregir() {
     if (marcado && Number(marcado.value) === p.correcta) aciertos++;
   });
 
+  // Mostrar resultado al usuario
   $resultado.textContent = `Resultado: ${aciertos} / ${preguntas.length}`;
 }
 
+// ===== Inicialización =====
+// Renderizar el cuestionario al cargar la página
 render();

@@ -25,6 +25,7 @@
   <meta name="twitter:description" content="Descubre recursos, tutoriales y ejercicios para dominar el dibujo tradicional y digital.">
   <meta name="twitter:image" content="https://damiantabucchi.github.io/NaipeArt/resources/banner1920x600.png">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/cuestionario.js" defer></script>
 </head>
 <body>
     <header class="banner">
@@ -34,20 +35,23 @@
       <h1>Cuestionario</h1>
     </section>
 
-    <table class="links">
-      <tr>
-        <td><a href="index.html">Home</a></td>
-        <td><a href="tutoriales.html">Tutoriales</a></td>
-        <td><a href="fundamentos.html">Fundamentos</a></td>
-        <td><a href="recursos.html">Recursos</a></td>
-        <td><a href="sobremi.html">Sobre mí</a></td>
-        <td><a href="contacto.html">Contacto</a></td>
-      </tr>
-    </table>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tutoriales.html">Tutoriales</a></li>
+        <li><a href="fundamentos.html">Fundamentos</a></li>
+        <li><a href="recursos.html">Recursos</a></li>
+        <li><a href="galeria.html">Galería</a></li>
+        <li><a href="historia.html">Historia</a></li>
+        <li><a href="sobremi.html">Sobre mí</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
 
     <section>
       <h2 class="center">Test de 5 preguntas (opción múltiple)</h2>
-      <p class="center">Marca una opción por pregunta y presiona “Corregir”.</p>
+      <p class="center">Marca una opción por pregunta y presiona "Corregir".</p>
       <form id="quiz">
         <!-- El JS inyectará aquí las preguntas -->
       </form>
@@ -57,7 +61,7 @@
 
   <footer>
     <div>
-      <p class="center">© <span id="y"></span> NaipeArt • <a href="https://instagram.com/naipeart" rel="me">Instagram</a> • <a href="https://youtube.com/@naipeart">YouTube</a></p>
+      <p class="center">© <span id="y"></span> NaipeArt • <a href="https://instagram.com/naipeart" target="_blank" rel="me">Instagram</a> • <a href="https://youtube.com/@naipeart" target="_blank">YouTube</a></p>
     </div>
     <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
   </footer>

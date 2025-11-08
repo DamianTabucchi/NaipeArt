@@ -1,96 +1,213 @@
-/* ====== Base ====== */
+/* ==========================================
+   NAIPEART - HOJA DE ESTILOS PRINCIPAL
+   ==========================================
+   Proyecto: NaipeArt - Plataforma Educativa de Dibujo
+   Autor: Damian Tabucchi
+   Materia: Introducción a la Programación Web - UAI
+   Descripción: Estilos para un sitio web educativo con temática artística
+   ========================================== */
+
+/* ====== Variables CSS (Custom Properties) ====== 
+   Define los colores principales del sitio para
+   mantener consistencia y facilitar cambios futuros */
 :root{
-  --paper: #e9dfd1;         /* tono papel */
-  --ink: #2a2019;           /* tinta/marrón oscuro */
-  --sepia: #7a5a3a;         /* acentos (ébano/sepia) */
-  --sepia-clarito:#c8b39a;
+  --paper: #e9dfd1;         /* Tono papel envejecido - fondo principal */
+  --ink: #2a2019;           /* Tinta/marrón oscuro - texto principal */
+  --sepia: #7a5a3a;         /* Acentos ébano/sepia - enlaces y detalles */
+  --sepia-clarito:#c8b39a;  /* Sepia claro - hover y efectos suaves */
 }
 
-* { box-sizing: border-box; }
+/* ====== Reset y Box Model ====== 
+   Aplicamos box-sizing: border-box a todos los elementos
+   para que padding y border se incluyan en el width/height */
+* { 
+  box-sizing: border-box; 
+}
 
+/* ====== Banner Header (Imagen Hero) ======
+   Banner responsivo que mantiene proporción 16:5
+   usando padding-top como técnica de aspect ratio */
 .banner{
   position: relative;
   width: 100%;
   height: 0;
-  padding-top: 30%; /* relación aprox. 16:5 */
-  background-image: url('../resources/banner1920x600.png'); /* <-- tu archivo */
-  background-size: cover;
-  background-position: center;
+  padding-top: 30%;           /* Relación aprox. 16:5 (600/1920 = 0.3125) */
+  background-image: url('../resources/banner1920x600.png');
+  background-size: cover;     /* Cubre todo el espacio disponible */
+  background-position: center;/* Centra la imagen */
   margin: 16px 0 24px;
   border-radius: 10px;
   box-shadow: 0 3px 10px rgba(0,0,0,.08);
 }
 
+/* Texto superpuesto en el banner (opcional) */
 .banner-text{
   position: absolute;
-  inset: 0;
+  inset: 0;                   /* Equivalente a top:0; right:0; bottom:0; left:0 */
   display: grid;
-  place-items: center;
+  place-items: center;        /* Centra vertical y horizontalmente */
   text-align: center;
   color: #f7f3ed;
   text-shadow: 2px 2px 4px rgba(0,0,0,.5);
-  font-size: clamp(18px, 2.2vw, 24px);
+  font-size: clamp(18px, 2.2vw, 24px); /* Tamaño fluido entre 18px y 24px */
 }
 
-/* Si no quieres texto superpuesto en alguna página: */
-.banner.no-overlay .banner-text{ display:none; }
+/* Si no se quiere texto superpuesto (ej: página 404) */
+.banner.no-overlay .banner-text{ 
+  display:none; 
+}
 
+/* ====== Estilos del Body ======
+   Configuración base del documento con fondo texturizado */
+body{
+  margin: 0;
+  color: var(--ink);
+  line-height: 1.5;           /* Mejora legibilidad del texto */
+  font-family: Georgia, "Times New Roman", serif; /* Fuente serif clásica */
+
+  /* Fondo papel con textura para efecto artístico */
+  background-color: var(--paper);
+  background-image: url('../resources/papertexture.PNG');
+  background-repeat: repeat;
+  background-attachment: fixed;   /* Textura fija mientras se hace scroll */
+  background-size: 2000px auto;
+}
+
+/* ====== Contenedor Principal ======
+   Limita el ancho máximo y centra el contenido */
+main{
+  max-width: 1100px;          /* Ancho máximo para legibilidad */
+  margin: 0 auto;             /* Centra horizontalmente */
+  padding: 16px;              /* Espacio interno */
+}
+
+/* ====== Secciones de Contenido ======
+   Cada section tiene un fondo semi-transparente con bordes suaves */
 main > section{
-  background-color: rgba(255,255,255,.92);
+  background-color: rgba(255,255,255,.92); /* Fondo blanco semi-transparente */
   border: 1px solid rgba(42,32,25,.08);
   border-radius: 10px;
   padding: 20px;
   margin: 20px 0;
-  box-shadow: 0 2px 8px rgba(0,0,0,.04);
+  box-shadow: 0 2px 8px rgba(0,0,0,.04); /* Sombra sutil para profundidad */
 }
 
-body{
-  margin: 0;                      /* quitamos márgenes globales */
-  color: var(--ink);
-  line-height: 1.5;
-  font-family: Georgia, "Times New Roman", serif;
-
-  /* Fondo papel con textura */
-  background-color: var(--paper);
-  background-image: url('../resources/papertexture.PNG');
-  background-repeat: repeat;
-  background-attachment: fixed;   /* sensación “lienzo” */
-  background-size: 2000px auto;
+/* ====== Tipografía: Títulos ======
+   Jerarquía clara de encabezados con estilos consistentes */
+h1, h2, h3 { 
+  margin-bottom: 6pt; 
 }
 
-main{
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 16px;
+h1 { 
+  text-align: center;         /* Títulos principales siempre centrados */
 }
 
-/* Titulares */
-h1, h2, h3 { margin-bottom: 6pt; }
-h1 { text-align: center; }
-h2, h3 { text-align: left; }
-h2.center { text-align: center; }
-h3.center { text-align: center; }
+h2, h3 { 
+  text-align: left;           /* Subtítulos alineados a la izquierda */
+}
 
-/* Párrafos */
+/* Clases de utilidad para centrar títulos cuando sea necesario */
+h2.center, h3.center { 
+  text-align: center; 
+}
+
+/* ====== Tipografía: Párrafos ======
+   Diferentes estilos de alineación para párrafos */
 p.margen {
-  max-width: 70ch;
+  max-width: 70ch;            /* Limita longitud de línea para legibilidad */
   margin: 6pt 0 1pt;
 }
 
-p.center{ text-align:center; margin: 0 auto; }
-p.justify{ text-align: justify; }
-iframe{ max-width:100%; border:0; }
-figure{ margin: 0; }
-figcaption{ font-size: .9em; color: #6b5747; text-align:center; }
+p.center{ 
+  text-align: center; 
+  margin: 0 auto; 
+}
 
-/* Utilidades de centrado */
-div.center { text-align: center; }
-a.center { text-align: center; }
+p.justify{ 
+  text-align: justify;        /* Justificado para textos largos */
+}
 
-/* ====== Navegación ====== */
+/* ====== Elementos Multimedia ======
+   Estilos para iframes (videos) y figuras */
+iframe{ 
+  max-width: 100%;            /* Responsive */
+  border: 0; 
+}
+
+figure{ 
+  margin: 0;                  /* Elimina márgenes por defecto */
+}
+
+figcaption{ 
+  font-size: .9em; 
+  color: #6b5747; 
+  text-align: center; 
+}
+
+/* Utilidades de centrado para divs y enlaces */
+div.center, a.center { 
+  text-align: center; 
+}
+
+/* ==========================================
+   NAVEGACIÓN SEMÁNTICA CON <nav>
+   ==========================================
+   Sistema de navegación moderno usando elemento <nav>
+   con diseño flexible y responsive */
+
+nav.main-nav{
+  width: 100%;
+  margin: 10px 0 18px;
+  background: rgba(255,255,255,.85);
+  border: 1px solid rgba(42,32,25,.12);
+  border-radius: 10px;
+  overflow: hidden;           /* Contiene los elementos internos */
+}
+
+/* Lista sin estilo de bullets, usando Flexbox */
+nav.main-nav ul{
+  list-style: none;           /* Elimina bullets */
+  margin: 0;
+  padding: 0;
+  display: flex;              /* Layout flexible */
+  flex-wrap: wrap;            /* Permite wrapping en móviles */
+}
+
+/* Cada item de navegación toma espacio equitativo */
+nav.main-nav li{
+  flex: 1 1 auto;             /* Crecimiento flexible */
+  text-align: center;
+  border-right: 1px solid rgba(42,32,25,.08); /* Separador visual */
+}
+
+nav.main-nav li:last-child{ 
+  border-right: 0;            /* Último item sin borde derecho */
+}
+
+/* Estilos de los enlaces de navegación */
+nav.main-nav a{
+  display: block;             /* Ocupa todo el espacio del li */
+  color: var(--ink);
+  text-decoration: none;      /* Sin subrayado */
+  font-weight: 600;           /* Texto semi-bold */
+  padding: 18px 6px;
+}
+
+/* Estado hover de los enlaces */
+nav.main-nav a:hover{
+  background: var(--sepia-clarito); /* Fondo al pasar el mouse */
+  color: #1e140d;
+}
+
+/* ==========================================
+   NAVEGACIÓN CON TABLA (DEPRECATED)
+   ==========================================
+   Se mantiene por compatibilidad pero se 
+   recomienda usar <nav> en su lugar */
+
 table.links{
   width: 100%;
-  table-layout: fixed;
+  table-layout: fixed;        /* Columnas de ancho igual */
   border-collapse: separate;
   border-spacing: 0;
   margin: 10px 0 18px;
@@ -99,12 +216,16 @@ table.links{
   border-radius: 10px;
   overflow: hidden;
 }
+
 table.links td{
   padding: 10px 6px;
   text-align: center;
   border-right: 1px solid rgba(42,32,25,.08);
 }
-table.links td:last-child{ border-right: 0; }
+
+table.links td:last-child{ 
+  border-right: 0; 
+}
 
 table.links a{
   display: block;
@@ -113,47 +234,57 @@ table.links a{
   font-weight: 600;
   padding: 8px 0;
 }
+
 table.links a:hover{
   background: var(--sepia-clarito);
   color: #1e140d;
 }
 
-/* ====== Contacto: tabla formulario + mapa ====== */
+/* ==========================================
+   PÁGINA DE CONTACTO
+   ==========================================
+   Layout de dos columnas: formulario + mapa */
+
 table.contact-map{
   border-collapse: collapse;
-  margin: 20px auto;   /* centra la tabla */
-  width: auto;         /* ocupa el ancho de sus celdas */
-  max-width: 100%;     /* evita desborde en pantallas chicas */
+  margin: 20px auto;          /* Centra la tabla */
+  width: auto;                /* Ocupa el ancho de sus celdas */
+  max-width: 100%;            /* Evita desborde en pantallas chicas */
 }
 
+/* Columna del formulario (40% del ancho) */
 table.contact-map .form-cell{
   vertical-align: top;
   padding: 15px;
   width: 40%;
 }
 
+/* Columna del mapa (60% del ancho) */
 table.contact-map .map-cell{
   vertical-align: top;
   padding: 15px;
   width: 60%;
 }
 
+/* Textarea responsive con tamaños controlados */
 table.contact-map textarea{
-  resize: vertical;      /* ← permite solo alto */
+  resize: vertical;           /* Solo permite redimensionar verticalmente */
   width: 100%;
   max-width: 100%;
   min-width: 0;
   min-height: 120px;
-  max-height: 50vh;
+  max-height: 50vh;           /* Máximo 50% de la altura del viewport */
   overflow: auto;
 }
 
+/* Inputs de formulario responsive */
 table.contact-map input{
   width: 100%;
   max-width: 100%;
   min-width: 0;
 }
 
+/* Botón de envío del formulario */
 table.contact-map button{
   padding: 8px 14px;
   border: 1px solid #999;
@@ -161,28 +292,36 @@ table.contact-map button{
   border-radius: 6px;
   cursor: pointer;
 }
+
 table.contact-map button:hover{
-  background: #f0f0f0;
+  background: #f0f0f0;        /* Feedback visual al hover */
 }
 
-/* En móviles: apilar formulario y mapa */
+/* Responsive: apilar formulario y mapa en móviles */
 @media (max-width: 800px){
-  table.contact-map { width: 100%; }
+  table.contact-map { 
+    width: 100%; 
+  }
+  
   table.contact-map .form-cell,
   table.contact-map .map-cell{
-    display: block;
+    display: block;           /* Apilamiento vertical */
     width: 100%;
     padding: 10px 0;
   }
 }
 
-/* Tabla de fundamentos */
+/* ==========================================
+   PÁGINA DE FUNDAMENTOS
+   ==========================================
+   Tabla para mostrar teoría (texto) + práctica (imagen) */
+
 table.fundamentos-center{
   border-collapse: collapse;
   margin: 20px auto;
   width: 100%;
   max-width: 100%;
-  table-layout: fixed;
+  table-layout: fixed;        /* Ancho fijo de columnas */
 }
 
 table.fundamentos-center td,
@@ -192,29 +331,29 @@ table.fundamentos-center .fundamentos-cell{
   text-align: left;
 }
 
-/* Anchos por columna: texto 65% | imagen 35% */
-table.fundamentos-center td:nth-child(1){ width: 65%; }
-table.fundamentos-center td:nth-child(2){ width: 35%; }
+/* Proporción 65% texto | 35% imagen */
+table.fundamentos-center td:nth-child(1){ 
+  width: 65%; 
+}
 
-/* La imagen ocupa toda su columna, sin deformarse */
+table.fundamentos-center td:nth-child(2){ 
+  width: 35%; 
+}
+
+/* Imágenes responsive sin deformación */
 table.fundamentos-center img{
   width: 100%;
-  max-width: 480px;               /* ajusta este tope a gusto (420–600px) */
-  height: auto;
+  max-width: 480px;           /* Tope máximo para calidad visual */
+  height: auto;               /* Mantiene proporción */
   display: block;
-  margin: 0 auto;
+  margin: 0 auto;             /* Centra la imagen */
 }
 
-@media (max-width: 640px){
-  table.links{ font-size: 14px; }
-  table.links td{ padding: 8px 4px; }
-  table.fundamentos-center{ table-layout: auto; }
-  table.fundamentos-center td:nth-child(1),
-  table.fundamentos-center td:nth-child(2){ width: auto; }
-  table.fundamentos-center img{ max-width: 90vw; }
-}
+/* ==========================================
+   PÁGINA DE RECURSOS
+   ==========================================
+   Tabla para mostrar materiales con imagen + descripción */
 
-/* ====== Tabla de materiales ====== */
 table.materiales{
   width: 100%;
   border-collapse: separate;
@@ -222,6 +361,7 @@ table.materiales{
   margin: 16px 0 8px;
 }
 
+/* Cada fila es una tarjeta con sombra */
 table.materiales tr{
   background: rgba(255,255,255,.92);
   border: 1px solid rgba(42,32,25,.10);
@@ -230,6 +370,7 @@ table.materiales tr{
   box-shadow: 0 2px 6px rgba(0,0,0,.04);
 }
 
+/* Columnas de 50/50 */
 table.materiales td{
   vertical-align: middle;
   padding: 16px;
@@ -241,49 +382,53 @@ table.materiales .mat-texto p{
   text-align: left;
 }
 
+/* Imágenes de materiales */
 table.materiales .mat-img img{
   display: block;
   width: 100%;
-  height: auto;           /* no recorta; mantiene proporción */
-  max-height: 520px;      /* tope visual por si alguna es muy alta */
-  object-fit: contain;    /* y dentro del tope, que se vea completa */
+  height: auto;
+  max-height: 520px;          /* Límite visual para imágenes muy altas */
+  object-fit: contain;        /* Muestra imagen completa sin recortar */
   border-radius: 8px;
 }
 
-
+/* Responsive: apila imagen y texto en móviles */
 @media (max-width: 720px){
-  table.materiales td{ width: 100%; display: block; }
-  table.materiales tr + tr{ margin-top: 12px; display: block; }
+  table.materiales td{ 
+    width: 100%; 
+    display: block; 
+  }
+  
+  table.materiales tr + tr{ 
+    margin-top: 12px; 
+    display: block; 
+  }
 }
 
-/* ====== Footer ====== */
-footer p{
-  color:#6b5747;
-  font-size: .95em;
-}
-footer a{ color: var(--sepia); }
-footer a:hover{ text-decoration: underline; }
+/* ==========================================
+   PÁGINA SOBRE MÍ
+   ==========================================
+   Grid layout: texto a la izquierda, foto a la derecha */
 
-/* ====== Sobre mí ====== */
 .about-wrap {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;  /* texto | foto */
+  grid-template-columns: 1.2fr 0.8fr;  /* 60% texto | 40% foto */
   gap: 32px;
-  align-items: center;                 /* centra verticalmente */
-  justify-content: space-between;      /* mantiene proporción elegante */
+  align-items: center;        /* Alineación vertical centrada */
+  justify-content: space-between;
 }
 
 .about-text p {
   margin: 0 0 12px;
-  text-align: justify;                 /* ← justifica el texto */
+  text-align: justify;        /* Justificado para textos biográficos */
   line-height: 1.7;
 }
 
-/* Imagen centrada verticalmente y a la derecha */
+/* Contenedor de la foto del artista */
 .about-photo {
   display: flex;
-  justify-content: center;             /* centra horizontalmente dentro de su columna */
-  align-items: center;                 /* centra verticalmente dentro de su columna */
+  justify-content: center;    /* Centra horizontalmente */
+  align-items: center;        /* Centra verticalmente */
 }
 
 .about-photo figure {
@@ -293,7 +438,7 @@ footer a:hover{ text-decoration: underline; }
 
 .about-photo img {
   width: 100%;
-  max-width: 320px;                    /* tamaño equilibrado */
+  max-width: 320px;           /* Tamaño equilibrado */
   height: auto;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -307,10 +452,10 @@ footer a:hover{ text-decoration: underline; }
   font-style: italic;
 }
 
-/* Responsive: apila en pantallas pequeñas */
+/* Responsive: apila texto y foto verticalmente */
 @media (max-width: 860px) {
   .about-wrap {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Una sola columna */
     text-align: center;
   }
 
@@ -323,13 +468,18 @@ footer a:hover{ text-decoration: underline; }
   }
 }
 
-/* Galería de dibujos */
+/* ==========================================
+   GALERÍAS (Sobre Mí, Galería, etc.)
+   ==========================================
+   Grid responsive con imágenes en mosaico */
+
 .galeria{
   margin-top: 14px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Auto-fill responsive */
   gap: 14px;
 }
+
 .galeria figure{ 
   margin: 0; 
   background: rgba(255,255,255,.92);
@@ -338,12 +488,15 @@ footer a:hover{ text-decoration: underline; }
   overflow: hidden;
   box-shadow: 0 2px 6px rgba(0,0,0,.04);
 }
+
+/* Imágenes con altura fija para mosaico uniforme */
 .galeria img{
   width: 100%;
-  height: 240px;        /* altura consistente en mosaico */
-  object-fit: cover;    /* recorte suave si la proporción no coincide */
+  height: 240px;              /* Altura consistente */
+  object-fit: cover;          /* Recorte suave si la proporción no coincide */
   display: block;
 }
+
 .galeria figcaption{
   font-size: .9em;
   color: #6b5747;
@@ -351,15 +504,94 @@ footer a:hover{ text-decoration: underline; }
   padding: 8px 10px;
 }
 
-/* ====== Página 404 ====== */
+/* ==========================================
+   PÁGINA 404 (ERROR)
+   ==========================================
+   Estilos para página de error personalizada */
+
 .notfound-big {
-  font-size: clamp(36px, 8vw, 96px);
+  font-size: clamp(36px, 8vw, 96px); /* Tamaño fluido y grande */
   line-height: 1;
   letter-spacing: 2px;
   margin: 0 0 8px;
   text-align: center;
 }
+
 .notfound-sub {
   text-align: center;
-  opacity: .9;
+  opacity: .9;                /* Ligeramente transparente */
 }
+
+/* ==========================================
+   FOOTER
+   ==========================================
+   Pie de página con links a redes sociales */
+
+footer p{
+  color: #6b5747;
+  font-size: .95em;
+}
+
+footer a{ 
+  color: var(--sepia); 
+}
+
+footer a:hover{ 
+  text-decoration: underline; /* Subrayado al hover */
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ==========================================
+   Ajustes para pantallas pequeñas (móviles) */
+
+@media (max-width: 640px){
+  /* Navegación semántica responsive */
+  nav.main-nav{ 
+    font-size: 14px; 
+  }
+  
+  nav.main-nav ul{ 
+    flex-direction: column;   /* Apilamiento vertical */
+  }
+  
+  nav.main-nav li{ 
+    border-right: 0; 
+    border-bottom: 1px solid rgba(42,32,25,.08); 
+  }
+  
+  nav.main-nav li:last-child{ 
+    border-bottom: 0; 
+  }
+  
+  nav.main-nav a{ 
+    padding: 12px 4px; 
+  }
+  
+  /* Navegación con tabla responsive (deprecated) */
+  table.links{ 
+    font-size: 14px; 
+  }
+  
+  table.links td{ 
+    padding: 8px 4px; 
+  }
+  
+  /* Tablas de fundamentos responsive */
+  table.fundamentos-center{ 
+    table-layout: auto; 
+  }
+  
+  table.fundamentos-center td:nth-child(1),
+  table.fundamentos-center td:nth-child(2){ 
+    width: auto; 
+  }
+  
+  table.fundamentos-center img{ 
+    max-width: 90vw;          /* 90% del ancho del viewport */
+  }
+}
+
+/* ==========================================
+   FIN DE ESTILOS
+   ========================================== */

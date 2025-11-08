@@ -1,5 +1,13 @@
 <!doctype html>
 <html lang="es">
+<!--
+  ===============================================
+  NAIPEART - PÁGINA DE CONTACTO
+  ===============================================
+  Formulario de contacto funcional y mapa de ubicación
+  usando Google Maps. Incluye información académica.
+  ===============================================
+-->
 <head>
   <meta charset="utf-8">
   <title>NaipeArt — Dibujo tradicional y digital</title>
@@ -33,15 +41,19 @@
     <section>
       <h1>Contacto</h1>
     </section>
-    <table class="links">
-      <tr>
-        <td><a href="index.html">Home</a></td>
-        <td><a href="tutoriales.html">Tutoriales</a></td>
-        <td><a href="fundamentos.html">Fundamentos</a></td>
-        <td><a href="recursos.html">Recursos</a></td>
-        <td><a href="sobremi.html">Sobre mí</a></td>
-      </tr>
-    </table>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tutoriales.html">Tutoriales</a></li>
+        <li><a href="fundamentos.html">Fundamentos</a></li>
+        <li><a href="recursos.html">Recursos</a></li>
+        <li><a href="galeria.html">Galería</a></li>
+        <li><a href="historia.html">Historia</a></li>
+        <li><a href="sobremi.html">Sobre mí</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
     <section>
       <br>
       <h2 style = "text-align: center;">Página para el trabajo final de Introducción a la Programación Web</h2>
@@ -50,10 +62,11 @@
       <p>Me llamo Damian Tabucchi, alumno de la <abbr title="Universidad Abierta Interamericana">UAI</abbr>.
          Esta es la pagina web realizada para la materia Introducción a la Programación Web. Si deseas ponerte en contacto conmigo, puedes hacerlo a través del siguiente
         formulario:</p>
-      <!-- Tabla con 2 columnas: Formulario a la izquierda, Mapa a la derecha -->
+      <!-- =====  Layout de 2 columnas: Formulario + Mapa ===== -->
+      <!-- Usa tabla para compatibilidad y control de columnas -->
       <table class="contact-map">
         <tr>
-          <!-- Primera celda: Formulario -->
+          <!-- Columna izquierda: Formulario de contacto (40% ancho) -->
           <td class="form-cell">
             <form action="mailto:damian.tabucchi@alumnos.uai.edu.ar"
                   method="post" enctype="text/plain">
@@ -78,7 +91,7 @@
               </fieldset>
             </form>
           </td>
-          <!-- Segunda celda: Mapa -->
+          <!-- Columna derecha: Mapa de Google Maps (60% ancho) -->
           <td class="map-cell">
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.5384090631646!2d-58.37422102441413!3d-34.61583197294996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a3354dd6271479%3A0x962789966f588ee6!2sEstatua%20de%20Mafalda!5e0!3m2!1ses!2sar!4v1762476248763!5m2!1ses!2sar" 
