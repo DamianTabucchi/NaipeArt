@@ -1,13 +1,30 @@
 <!doctype html>
 <html lang="es">
+<!--
+  ===============================================
+  NAIPEART - PLATAFORMA EDUCATIVA DE DIBUJO
+  ===============================================
+  Proyecto: NaipeArt
+  Autor: Damian Tabucchi
+  Materia: Introducción a la Programación Web - UAI
+  Profesor: Dario Cardacci
+  Página: Home / Página Principal
+  ===============================================
+-->
 <head>
   <meta charset="utf-8">
   <title>NaipeArt — Dibujo tradicional y digital</title>
+  
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="resources/favicon.png">
+  
+  <!-- Meta tags básicos -->
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="author" content="Damian Tabucchi">
   <meta name="description" content="NaipeArt es una plataforma educativa dedicada a la enseñanza del dibujo tradicional y digital. Incluye fundamentos, tutoriales, recursos descargables y ejercicios interactivos.">
   <meta name="keywords" content="NaipeArt, dibujo, fundamentos, arte, tutoriales, Loomis, recursos, práctica artística, perspectiva, educación artística">
+  
+  <!-- Meta tags SEO -->
   <meta name="robots" content="index, follow">
   <meta http-equiv="refresh" content="30">
   <meta name="googlebot" content="index, follow">
@@ -16,33 +33,50 @@
   <meta name="rating" content="general">
   <meta name="application-name" content="NaipeArt">
   <meta name="theme-color" content="#7a5a3a">
+  
+  <!-- Open Graph / Facebook -->
   <meta property="og:title" content="NaipeArt — Aprende dibujo paso a paso">
   <meta property="og:description" content="Aprende dibujo de manera práctica con ejercicios, tutoriales y fundamentos esenciales para mejorar tus habilidades artísticas.">
   <meta property="og:image" content="https://damiantabucchi.github.io/NaipeArt/resources/banner1920x600.png">
   <meta property="og:url" content="https://damiantabucchi.github.io/NaipeArt">
+  
+  <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="NaipeArt — Aprende dibujo paso a paso">
   <meta name="twitter:description" content="Descubre recursos, tutoriales y ejercicios para dominar el dibujo tradicional y digital.">
   <meta name="twitter:image" content="https://damiantabucchi.github.io/NaipeArt/resources/banner1920x600.png">
+  
+  <!-- Hoja de estilos principal -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <!-- Header con imagen banner -->
   <header class="banner">
   </header>
+  
+  <!-- Contenido principal -->
   <main>
-      <section>
+    <!-- Sección de introducción -->
+    <section>
       <h1>Aprende dibujo paso a paso</h1>
       <p class="center">En esta pagina encontrarás diferentes recursos para aprender dibujo de manera efectiva. Desde videos tutoriales hasta guías prácticas, todo lo que necesitas para mejorar tus habilidades artísticas.</p>
     </section>
-    <table class="links">
-      <tr>
-        <td><a href="tutoriales.html">Tutoriales</a></td>
-        <td><a href="fundamentos.html">Fundamentos</a></td>
-        <td><a href="recursos.html">Recursos</a></td>
-        <td><a href="sobremi.html">Sobre mí</a></td>
-        <td><a href="contacto.html">Contacto</a></td>
-      </tr>
-    </table>
+    
+    <!-- Navegación principal semántica -->
+    <nav class="main-nav">
+      <ul>
+        <li><a href="tutoriales.html">Tutoriales</a></li>
+        <li><a href="fundamentos.html">Fundamentos</a></li>
+        <li><a href="recursos.html">Recursos</a></li>
+        <li><a href="galeria.html">Galería</a></li>
+        <li><a href="historia.html">Historia</a></li>
+        <li><a href="sobremi.html">Sobre mí</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+    
+    <!-- Sección de información académica -->
     <section>
       <br>
       <h2 class="center">Página para el trabajo final de Introducción a la Programación Web</h2>
@@ -50,10 +84,13 @@
       <h3 class="center">Alumno: Tabucchi, Damian</h3>
     </section>
   </main>
+  
+  <!-- Pie de página con copyright y redes sociales -->
   <footer>
     <div>
       <p class="center">© <span id="y"></span> NaipeArt • <a href="https://instagram.com/naipeart" target="_blank" rel="me">Instagram</a> • <a href="https://youtube.com/@naipeart" target="_blank">YouTube</a></p>
     </div>
+    <!-- Script para año dinámico en el copyright -->
     <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
   </footer>
 </body>
