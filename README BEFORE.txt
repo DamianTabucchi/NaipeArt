@@ -1,0 +1,1 @@
+Para acceder al cuestionario realizado usando JavaScript, navegar a la página recursos.html y hacer click en "Abrir cuestionario en una nueva pestaña." al final de la página.
