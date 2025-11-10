@@ -14,7 +14,7 @@ La plataforma ofrece recursos educativos gratuitos para artistas de todos los ni
 - **Materia:** Introducción a la Programación Web
 - **Profesor:** Cardacci, Dario
 - **Alumno:** Tabucchi, Damian
-- **Año:** 2024-2025
+- **Año:** 2025
 
 ## ✨ Características Principales
 
